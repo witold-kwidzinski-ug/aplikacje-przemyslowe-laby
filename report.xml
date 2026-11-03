@@ -1,0 +1,30 @@
+<report>
+  <machines>9</machines>
+  <workOrders>45</workOrders>
+  <unfinishedOrders>
+    <priority name="LOW">
+      <count>1</count>
+    </priority>
+    <priority name="NORMAL">
+      <count>1</count>
+    </priority>
+    <priority name="HIGH">
+      <count>3</count>
+    </priority>
+    <priority name="CRITICAL">
+      <count>0</count>
+    </priority>
+  </unfinishedOrders>
+  <topMachineBreakdowns>
+    <machine id="M-04" breakdowns="5"/>
+    <machine id="M-08" breakdowns="4"/>
+    <machine id="M-05" breakdowns="3"/>
+    <machine id="M-06" breakdowns="3"/>
+    <machine id="M-02" breakdowns="2"/>
+  </topMachineBreakdowns>
+  <mttr>
+    <A>13 h 51 min</A>
+    <B>13 h 6 min</B>
+    <C>16 h 45 min</C>
+  </mttr>
+</report>

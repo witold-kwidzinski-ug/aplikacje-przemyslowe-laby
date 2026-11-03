@@ -15,13 +15,16 @@ public class TestWorkOrder {
     @Test
     void createWorkOrderValid() {
         WorkOrder w = new WorkOrder("WO-0001", "M-06", PREVENTIVE, NORMAL, DONE, LocalDateTime.parse("2026-03-02T15:45"), LocalDateTime.parse("2026-03-02T23:05"));
-        assertEquals("WO-0001", w.id());
-        assertEquals("M-06", w.machineId());
-        assertEquals(PREVENTIVE, w.type());
-        assertEquals(NORMAL, w.priority());
-        assertEquals(DONE, w.status());
-        assertEquals(LocalDateTime.parse("2026-03-02T15:45"), w.reportedAt());
-        assertEquals(LocalDateTime.parse("2026-03-02T23:05"), w.closedAt());
+
+        assertAll("Creating WorkOrder",
+                () -> assertEquals("WO-0001", w.id()),
+                () -> assertEquals("M-06", w.machineId()),
+                () -> assertEquals(PREVENTIVE, w.type()),
+                () -> assertEquals(NORMAL, w.priority()),
+                () -> assertEquals(DONE, w.status()),
+                () -> assertEquals(LocalDateTime.parse("2026-03-02T15:45"), w.reportedAt()),
+                () -> assertEquals(LocalDateTime.parse("2026-03-02T23:05"), w.closedAt())
+        );
     }
 
     @Test
@@ -43,8 +46,9 @@ public class TestWorkOrder {
     void createWorkOrderNotDoneWithNoClosedAt() {
         WorkOrder w = new WorkOrder("WO-0001", "M-06", PREVENTIVE, NORMAL, OPEN, LocalDateTime.parse("2026-03-02T15:45"), null);
 
-        assertNull(w.closedAt());
-        assertEquals(OPEN, w.status());
+        assertAll("Not done WorkOrder with no closedAt",
+                () -> assertNull(w.closedAt()),
+                () -> assertEquals(OPEN, w.status()));
     }
 
 }
