@@ -25,11 +25,11 @@ public class Report {
         return res;
     }
 
-    public static List<Map.Entry<String, Long>> topMachineBreakdowns(List<WorkOrder> wo) {
+    public static List<Map.Entry<String, Long>> topMachineBreakdowns(List<WorkOrder> wo, long top) {
         return wo.stream().filter(n -> n.type().equals(BREAKDOWN) && !n.status().equals(CANCELLED))
                 .collect(Collectors.groupingBy(WorkOrder::machineId, Collectors.counting()))
                 .entrySet().stream().sorted(Map.Entry.<String, Long>comparingByValue().reversed().thenComparing(Map.Entry.comparingByKey()))
-                .limit(3)
+                .limit(top)
                 .toList();
     }
 

@@ -13,11 +13,13 @@ public class TestMachine {
     @Test
     void createMachineValid() {
         Machine m = new Machine("1", "maszyna", MILLING_MACHINE, "A", LocalDate.parse("2026-10-23"));
-        assertEquals("1", m.id());
-        assertEquals("maszyna", m.name());
-        assertEquals(MILLING_MACHINE, m.type());
-        assertEquals("A", m.hall());
-        assertEquals(LocalDate.parse("2026-10-23"), m.createdAt());
+
+        assertAll("Creating Machine",
+                () -> assertEquals("1", m.id()),
+                () -> assertEquals("maszyna", m.name()),
+                () -> assertEquals(MILLING_MACHINE, m.type()),
+                () -> assertEquals("A", m.hall()),
+                () -> assertEquals(LocalDate.parse("2026-10-23"), m.createdAt()));
     }
 
     @Test
