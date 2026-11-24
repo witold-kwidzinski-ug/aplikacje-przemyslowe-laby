@@ -19,13 +19,15 @@ public class ReportRunner implements ApplicationRunner {
     private final long top;
     private final String xml;
     private final ReportXmlWriter xmlWriter;
+    private final WorkOrderDataSource workOrderDataSource;
 
-    public ReportRunner(List<Machine> machines, List<WorkOrder> workOrders, long top, String xmlFile,  ReportXmlWriter xmlWriter) {
+    public ReportRunner(List<Machine> machines, List<WorkOrder> workOrders, long top, String xmlFile, ReportXmlWriter xmlWriter,  WorkOrderDataSource workOrderDataSource) {
         this.m = machines;
         this.wo = workOrders;
         this.top = top;
         this.xml = xmlFile;
         this.xmlWriter = xmlWriter;
+        this.workOrderDataSource = workOrderDataSource;
     }
 
 
@@ -59,6 +61,20 @@ public class ReportRunner implements ApplicationRunner {
             long seconds = entry.getValue();
             System.out.println(entry.getKey() + " " + Duration.ofSeconds(seconds).toHoursPart() + " h " + Duration.ofSeconds(seconds).toMinutesPart() + " m");
         }
+
+        Map<WorkOrder.Priority, Long> finishedOrdersOverSla = this.workOrderDataSource.finishedOrdersOverSlaLimit();
+
+        System.out.println("\n===== Zakończone zlecenia ponad limit SLA =====");
+        for (WorkOrder.Priority k: List.of(CRITICAL, HIGH, NORMAL, LOW)) {
+            System.out.println(k + ": " + finishedOrdersOverSla.get(k));
+        }
+
+        List<String> unfinishedOrdersOverLimit = this.workOrderDataSource.unfinishedOrdersOverLimit();
+
+        System.out.println("\n===== Nieskończone zlecenia poza limitem czasowym =====");
+        System.out.println(unfinishedOrdersOverLimit);
+
+
 
         List<PriorityCount> unfinishedOrders = uO.entrySet().stream().map(n -> new PriorityCount(n.getKey().name(), n.getValue())).toList();
         List<MachineBreakdown> topMachineBreakdowns = machineBreakdowns.stream().map(n -> new MachineBreakdown(n.getKey(), n.getValue())).toList();
