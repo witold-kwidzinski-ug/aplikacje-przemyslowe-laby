@@ -47,9 +47,9 @@ public class TestReportXmlWriter {
 
         ReportData rdFromFile = xmlWriter.read(file.toString());
 
-        assertNotNull(rdFromFile);
-
-        assertEquals(rd, rdFromFile);
+        assertAll("ReportData from file",
+                () -> assertNotNull(rdFromFile),
+                () -> assertEquals(rd, rdFromFile));
 
 
     }

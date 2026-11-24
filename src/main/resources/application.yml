@@ -8,3 +8,8 @@ cmms:
   report:
     top: 3
     file: report.xml
+  sla:
+    critical: 4h
+    high: 16h
+    normal: 36h
+    low: 264h

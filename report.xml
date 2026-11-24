@@ -19,8 +19,6 @@
     <machine id="M-04" breakdowns="5"/>
     <machine id="M-08" breakdowns="4"/>
     <machine id="M-05" breakdowns="3"/>
-    <machine id="M-06" breakdowns="3"/>
-    <machine id="M-02" breakdowns="2"/>
   </topMachineBreakdowns>
   <mttr>
     <A>13 h 51 min</A>
