@@ -16,7 +16,7 @@ public class VendorClient {
         this.restClient = builder.baseUrl(baseUrl).build();
     }
 
-    public VendorResponse getVendor(Machine.MachineType machineType) {
+    public pl.edu.ug.cmms.VendorResponse getVendor(Machine.MachineType machineType) {
         try {
             Vendor v = this.restClient.get().uri("/api/maintenance-plans/{machineType}", machineType).retrieve().body(Vendor.class);
             if (v == null) {
