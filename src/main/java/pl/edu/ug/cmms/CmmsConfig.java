@@ -5,10 +5,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import java.io.IOException;
 import java.time.Clock;
 import java.time.ZoneId;
 import java.time.LocalDateTime;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,8 +19,9 @@ import java.util.Map;
 public class CmmsConfig {
 
     @Bean
-    public List<Machine> machines() {
-        return SampleData.machines();
+    public ImportedMachineInfo machines(MachineCsvImporter importer) throws IOException {
+        ImportedMachineInfo imported = importer.importMachines(SampleData.machines());
+        return imported;
     }
     @Bean
     public List<WorkOrder> workOrders() {
@@ -57,8 +60,8 @@ public class CmmsConfig {
     }
 
     @Bean
-    public ReportRunner reportRunner(List<Machine> machines, List<WorkOrder> workOrders, @Value("${cmms.report.top}") long top, @Value("${cmms.report.file}") String file, ReportXmlWriter xmlWriter, WorkOrderDataSource workOrderDataSource) {
-        return new ReportRunner(machines, workOrders, top, file, xmlWriter, workOrderDataSource);
+    public ReportRunner reportRunner(ImportedMachineInfo machines, List<WorkOrder> workOrders, @Value("${cmms.report.top}") long top, @Value("${cmms.report.file}") String file, ReportXmlWriter xmlWriter, WorkOrderDataSource workOrderDataSource, VendorClient vendorClient) {
+        return new ReportRunner(machines, workOrders, top, file, xmlWriter, workOrderDataSource, vendorClient);
     }
 
 }
