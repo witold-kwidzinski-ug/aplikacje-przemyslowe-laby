@@ -1,6 +1,10 @@
 spring:
   main:
     banner-mode: off
+  http:
+    clients:
+      connect-timeout: 2s
+      read-timeout: 2s
 logging:
   level:
     root: warn
@@ -13,3 +17,7 @@ cmms:
     high: 16h
     normal: 36h
     low: 264h
+  import:
+    machines-file: data/new_machines.csv
+  vendor:
+    base-url: http://localhost:8090

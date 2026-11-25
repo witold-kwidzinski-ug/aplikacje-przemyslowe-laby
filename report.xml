@@ -1,5 +1,5 @@
 <report>
-  <machines>9</machines>
+  <machines>14</machines>
   <workOrders>45</workOrders>
   <unfinishedOrders>
     <priority name="LOW">

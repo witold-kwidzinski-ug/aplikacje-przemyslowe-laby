@@ -14,7 +14,9 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-restclient'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-restclient-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'tools.jackson.dataformat:jackson-dataformat-xml'
 }
