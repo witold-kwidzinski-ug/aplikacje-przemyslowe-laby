@@ -1,16 +1,18 @@
-package pl.edu.ug.cmms;
+package pl.edu.ug.cmms.data;
 
-import static pl.edu.ug.cmms.Machine.MachineType.*;
-import static pl.edu.ug.cmms.WorkOrder.Priority.*;
-import static pl.edu.ug.cmms.WorkOrder.WorkOrderStatus.*;
-import static pl.edu.ug.cmms.WorkOrder.WorkOrderType.*;
+import static pl.edu.ug.cmms.machine.Machine.MachineType.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.Priority.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderStatus.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderType.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-import pl.edu.ug.cmms.WorkOrder.Priority;
-import pl.edu.ug.cmms.WorkOrder.WorkOrderStatus;
-import pl.edu.ug.cmms.WorkOrder.WorkOrderType;
+import pl.edu.ug.cmms.workorder.WorkOrder;
+import pl.edu.ug.cmms.workorder.WorkOrder.Priority;
+import pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderStatus;
+import pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderType;
+import pl.edu.ug.cmms.machine.Machine;
 
 /** Starting data of the plant: 9 machines in halls A-C and 45 work orders (2026-03-02 .. 2026-09-19). */
 public final class SampleData {

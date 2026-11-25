@@ -1,4 +1,4 @@
-package pl.edu.ug.cmms;
+package pl.edu.ug.cmms.workorder;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

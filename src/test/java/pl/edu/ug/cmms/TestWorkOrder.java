@@ -5,9 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
 
-import static pl.edu.ug.cmms.WorkOrder.Priority.*;
-import static pl.edu.ug.cmms.WorkOrder.WorkOrderStatus.*;
-import static pl.edu.ug.cmms.WorkOrder.WorkOrderType.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.Priority.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderStatus.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderType.*;
+
+import pl.edu.ug.cmms.workorder.WorkOrder;
 
 
 public class TestWorkOrder {

@@ -1,4 +1,7 @@
-package pl.edu.ug.cmms;
+package pl.edu.ug.cmms.report;
+
+import pl.edu.ug.cmms.machine.Machine;
+import pl.edu.ug.cmms.workorder.WorkOrder;
 
 import java.time.Duration;
 import java.util.HashMap;
@@ -7,8 +10,8 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-import static pl.edu.ug.cmms.WorkOrder.WorkOrderStatus.*;
-import static pl.edu.ug.cmms.WorkOrder.WorkOrderType.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderStatus.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderType.*;
 
 public class Report {
     private Report() {}

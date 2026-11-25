@@ -8,6 +8,10 @@ import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.restclient.test.autoconfigure.RestClientTest;
 import org.springframework.test.web.client.MockRestServiceServer;
+import pl.edu.ug.cmms.machine.Machine;
+import pl.edu.ug.cmms.vendor.Vendor;
+import pl.edu.ug.cmms.vendor.VendorClient;
+import pl.edu.ug.cmms.vendor.VendorResponse;
 
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.*;

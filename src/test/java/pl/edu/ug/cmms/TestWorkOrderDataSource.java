@@ -3,6 +3,7 @@ package pl.edu.ug.cmms;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
+import pl.edu.ug.cmms.data.SampleData;
 
 import java.time.Clock;
 import java.time.Duration;
@@ -13,9 +14,12 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static pl.edu.ug.cmms.WorkOrder.Priority.*;
-import static pl.edu.ug.cmms.WorkOrder.WorkOrderStatus.*;
-import static pl.edu.ug.cmms.WorkOrder.WorkOrderType.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.Priority.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderStatus.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderType.*;
+
+import pl.edu.ug.cmms.workorder.WorkOrder;
+import pl.edu.ug.cmms.workorder.WorkOrderDataSource;
 
 public class TestWorkOrderDataSource {
 
