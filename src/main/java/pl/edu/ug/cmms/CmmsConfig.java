@@ -12,6 +12,7 @@ import pl.edu.ug.cmms.report.ReportXmlWriter;
 import pl.edu.ug.cmms.vendor.VendorClient;
 import pl.edu.ug.cmms.workorder.WorkOrder;
 import pl.edu.ug.cmms.workorder.WorkOrderDataSource;
+import pl.edu.ug.cmms.workorder.WorkOrderService;
 
 import java.io.IOException;
 import java.time.Clock;
@@ -64,6 +65,10 @@ public class CmmsConfig {
         map.put(WorkOrder.Priority.LOW, low);
 
         return new WorkOrderDataSource(workOrders, map, clock);
+    }
+
+    @Bean public WorkOrderService workOrderService(List<WorkOrder> workOrders, Clock clock, ImportedMachineInfo machines) {
+        return new WorkOrderService(workOrders, clock, machines);
     }
 
     @Bean
