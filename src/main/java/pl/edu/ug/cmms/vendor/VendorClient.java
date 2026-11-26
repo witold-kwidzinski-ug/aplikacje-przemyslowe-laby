@@ -1,10 +1,11 @@
-package pl.edu.ug.cmms;
+package pl.edu.ug.cmms.vendor;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientException;
+import pl.edu.ug.cmms.machine.Machine;
 
 import java.util.Optional;
 
@@ -16,7 +17,7 @@ public class VendorClient {
         this.restClient = builder.baseUrl(baseUrl).build();
     }
 
-    public pl.edu.ug.cmms.VendorResponse getVendor(Machine.MachineType machineType) {
+    public VendorResponse getVendor(Machine.MachineType machineType) {
         try {
             Vendor v = this.restClient.get().uri("/api/maintenance-plans/{machineType}", machineType).retrieve().body(Vendor.class);
             if (v == null) {

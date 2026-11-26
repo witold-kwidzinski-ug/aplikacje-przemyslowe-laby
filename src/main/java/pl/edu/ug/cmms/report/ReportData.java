@@ -1,8 +1,6 @@
-package pl.edu.ug.cmms;
+package pl.edu.ug.cmms.report;
 
-import tools.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import tools.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import tools.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.util.List;
 

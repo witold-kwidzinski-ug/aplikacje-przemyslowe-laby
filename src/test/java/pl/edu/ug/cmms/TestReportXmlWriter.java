@@ -2,6 +2,9 @@ package pl.edu.ug.cmms;
 
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.api.Test;
+import pl.edu.ug.cmms.report.ReportData;
+import pl.edu.ug.cmms.report.ReportXmlWriter;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;

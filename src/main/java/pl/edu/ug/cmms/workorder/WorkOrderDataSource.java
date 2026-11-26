@@ -1,4 +1,4 @@
-package pl.edu.ug.cmms;
+package pl.edu.ug.cmms.workorder;
 
 import java.time.Clock;
 import java.time.Duration;

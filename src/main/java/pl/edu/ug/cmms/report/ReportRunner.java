@@ -1,4 +1,4 @@
-package pl.edu.ug.cmms;
+package pl.edu.ug.cmms.report;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -8,10 +8,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import pl.edu.ug.cmms.ReportData.*;
+import pl.edu.ug.cmms.report.ReportData.*;
+import pl.edu.ug.cmms.machine.ImportedMachineInfo;
+import pl.edu.ug.cmms.machine.Machine;
+import pl.edu.ug.cmms.vendor.VendorClient;
+import pl.edu.ug.cmms.vendor.VendorResponse;
+import pl.edu.ug.cmms.workorder.WorkOrder;
+import pl.edu.ug.cmms.workorder.WorkOrderDataSource;
 
 
-import static pl.edu.ug.cmms.WorkOrder.Priority.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.Priority.*;
 
 public class ReportRunner implements ApplicationRunner {
     private final ImportedMachineInfo m;

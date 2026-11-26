@@ -2,6 +2,10 @@ package pl.edu.ug.cmms;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import pl.edu.ug.cmms.machine.ImportedMachineInfo;
+import pl.edu.ug.cmms.machine.Machine;
+import pl.edu.ug.cmms.machine.MachineCsvImporter;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;

@@ -10,13 +10,17 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import static pl.edu.ug.cmms.Machine.MachineType.*;
-import static pl.edu.ug.cmms.WorkOrder.Priority.*;
-import static pl.edu.ug.cmms.WorkOrder.WorkOrderStatus.*;
-import static pl.edu.ug.cmms.WorkOrder.WorkOrderType.*;
-import pl.edu.ug.cmms.WorkOrder.Priority;
-import pl.edu.ug.cmms.WorkOrder.WorkOrderStatus;
-import pl.edu.ug.cmms.WorkOrder.WorkOrderType;
+import static pl.edu.ug.cmms.machine.Machine.MachineType.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.Priority.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderStatus.*;
+import static pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderType.*;
+
+import pl.edu.ug.cmms.report.Report;
+import pl.edu.ug.cmms.workorder.WorkOrder;
+import pl.edu.ug.cmms.workorder.WorkOrder.Priority;
+import pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderStatus;
+import pl.edu.ug.cmms.workorder.WorkOrder.WorkOrderType;
+import pl.edu.ug.cmms.machine.Machine;
 
 
 public class TestReport {

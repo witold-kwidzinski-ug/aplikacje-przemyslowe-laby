@@ -1,11 +1,13 @@
 package pl.edu.ug.cmms;
 
 import org.junit.jupiter.api.*;
+import pl.edu.ug.cmms.machine.Machine;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
 
-import static pl.edu.ug.cmms.Machine.MachineType.*;
+import static pl.edu.ug.cmms.machine.Machine.MachineType.*;
 
 
 public class TestMachine {
